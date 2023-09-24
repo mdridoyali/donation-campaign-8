@@ -17,7 +17,7 @@ const Card = () => {
     <div className="flex justify-center items-center h-[60vh]  ">
       <div className="w-11/12 mx-auto flex flex-col justify-center items-center  " >
         <img className="w-[30vw] mt-10 " src={showCard.image}  />
-        <button className="btn"> Donate ${showCard.price}</button>
+        <button style={{backgroundColor: showCard.text_color}} className="px-2 py-1 text-lg font-semibold text-white rounded-md "> Donate ${showCard.price}</button>
         <p className="">{showCard.description}</p>
       </div>
     </div>
