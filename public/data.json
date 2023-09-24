@@ -9,7 +9,8 @@
         "card_bg": "#D9E5FF",
         "text_color": "#0052FF",
         "description": "There are many things that can be done to ensure that all people have access to a good health. Governments can invest in hospitals, provide financial assistance to the patients, and make sure that all hospitals have qualified doctors.",
-        "price": 290.00
+        "price": 290.00,
+        "col": "#bf08ad"
       },
     {
         "id": "2",

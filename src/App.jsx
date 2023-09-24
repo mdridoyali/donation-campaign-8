@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-<div className="navbar bg-base-100">
+{/* <div className="navbar bg-base-100">
   <div className="flex-1">
     <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
   </div>
@@ -17,7 +17,7 @@ function App() {
       <li><a>Login</a></li>
     </ul>
   </div>
-</div>
+</div> */}
     </>
   )
 }
