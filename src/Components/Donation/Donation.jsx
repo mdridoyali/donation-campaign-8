@@ -1,11 +1,9 @@
+import { element } from "prop-types";
 import { useEffect, useState } from "react";
 
 const Donation = () => {
   const [donates, setDonates] = useState([]);
   const [seeAll, setSeeAll] = useState(4);
-
-
-  console.log(donates);
 
   useEffect(() => {
     const donateItems = JSON.parse(localStorage.getItem("donation"));
@@ -14,9 +12,9 @@ const Donation = () => {
     }
   }, []);
 
-  const seeAllBtn = ()=>{
-   setSeeAll(donates.length)
-  }
+  const seeAllBtn = () => {
+    setSeeAll(donates.length);
+  };
 
   return (
     <div className="mb-10">
@@ -52,9 +50,20 @@ const Donation = () => {
           </div>
         ))}
       </div>
-      <div className="mx-auto text-center ">
-        <button onClick={seeAllBtn} className="bg-green-500 hover:bg-green-600 px-4  text-lg font-semibold text-white rounded-md py-1 ">See All</button>
-      </div>
+      {
+        <div className="mx-auto text-center ">
+          {donates.length > 4 && seeAll < donates.length ? (
+            <button
+              onClick={seeAllBtn}
+              className={`bg-green-500 hover:bg-green-600 px-4 text-lg font-semibold text-white rounded-md py-1 ${
+                seeAll === donates.length ? "hidden" : ""
+              }`}
+            >
+              See All
+            </button>
+          ) : null}
+        </div>
+      }
     </div>
   );
 };
