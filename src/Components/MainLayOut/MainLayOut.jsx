@@ -3,10 +3,10 @@ import Navbar from "../Navbar/Navbar";
 
 const MainLayOut = () => {
   return (
-    <div className=" mx-auto">
+    <div className="">
        <Navbar></Navbar>
        
-      <div>
+      <div className="">
          <Outlet></Outlet>
       </div>
     </div>

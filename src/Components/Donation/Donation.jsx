@@ -1,10 +1,10 @@
-import { element } from "prop-types";
+
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Donation = () => {
   const [donates, setDonates] = useState([]);
   const [seeAll, setSeeAll] = useState(4);
-
   useEffect(() => {
     const donateItems = JSON.parse(localStorage.getItem("donation"));
     if (donateItems) {
@@ -37,15 +37,17 @@ const Donation = () => {
                 {donate.category}
               </p>
               <h2 className="font-bold text-xl">{donate.title}</h2>
-              <p style={{ color: donate.text_color }} className="font-bold ">
+              <p style={{ color: donate.text_color }} className="font-bold">
                 ${donate.price.toFixed(2)}{" "}
               </p>
-              <button
-                style={{ backgroundColor: donate.text_color }}
-                className="px-2 py-1 rounded-md text-white  "
-              >
-                View Details
-              </button>
+              <Link to={`/card/${donate.id}`} >
+                <button
+                  style={{ backgroundColor: donate.text_color }}
+                  className="px-2 py-1 rounded-md text-white  "
+                >
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
         ))}

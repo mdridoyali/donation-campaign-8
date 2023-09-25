@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="w-11/12 mx-auto">
       <nav className="flex justify-between gap-8 items-center py-5 ">
-        <img className="w-28 md:w-44" src="/src/assets/Logo.png"/>
+        <img className="w-28 " src="/src/assets/Logo.png"/>
         <ul className="flex gap-3 md:gap-5 mr-5 ">
           <li className=" text-base font-semibold md:text-xl">
             <NavLink

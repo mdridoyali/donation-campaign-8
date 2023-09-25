@@ -26,11 +26,7 @@ const Card = () => {
       else{
         swal("Don't Duplicate!", "Already added this item!", "error");
       }
-
     }
-
-    // const 
-    console.log('ok')
   }
 
   useEffect(() => {
@@ -40,10 +36,11 @@ const Card = () => {
   }, [id, cards]);
 
   return (
-    <div className="flex justify-center items-center h-[60vh]  ">
-      <div className="w-11/12 mx-auto flex flex-col justify-center items-center space-y-2 " >
-        <img className="w-[30vw] mt-10 rounded-xl " src={showCard.image}  />
-        <button onClick={handleAddToDonate} style={{backgroundColor: showCard.text_color}} className="px-2 py-1 text-lg font-semibold text-white rounded-md "> Donate ${showCard.price}</button>
+    <div className="">
+      <div className="w-11/12 mx-auto " >
+      <div className="absolute inset-0 h-[90px] right-2 md:right-[10px] lg:right-[5px] top-[405px] w-[90vw] mx-auto rounded-b-md bg-black opacity-70"></div>
+        <img className="w-[90vw] h-96 mt-10 rounded-xl " src={showCard.image}  />
+        <button onClick={handleAddToDonate} style={{backgroundColor: showCard.text_color}} className=" bottom-16 left-6  relative px-2 py-1 text-lg font-semibold text-white rounded-md "> Donate ${showCard.price}</button>
         <h2 className="text-xl font-bold">{showCard.title}</h2>
         <p className="">{showCard.description}</p>
       </div>
