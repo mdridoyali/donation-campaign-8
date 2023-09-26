@@ -25,8 +25,8 @@ const Donation = () => {
             style={{ backgroundColor: donate.card_bg }}
             className="rounded-lg flex "
           >
-            <img className="" src={donate.image_don} alt={donate.title} />
-            <div className="p-4 space-y-4">
+            <img className="w-[50%] lg:w-[250px] " src={donate.image_don} alt={donate.title} />
+            <div className="p-4 space-y-4  ">
               <p
                 style={{
                   backgroundColor: donate.category_bg,

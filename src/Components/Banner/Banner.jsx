@@ -14,7 +14,7 @@ const Banner = () => {
   };
 
   useEffect(() => {
-    fetch("/public/data.json")
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) => setAllCards(data));
   }, []);
@@ -39,7 +39,7 @@ const Banner = () => {
         src={`https://i.ibb.co/XsLMsjJ/Rectangle-4281.png`}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2 className="text-5xl font-bold mb-8 text-center">
+        <h2 className="text-5xl px-2 font-bold mb-8 text-center">
           I Grow By Helping People In Need
         </h2>
         <div className="flex items-center">

@@ -6,12 +6,12 @@ const DonateCards = ({ filterCards }) => {
 
   return (
     <div className=" ">
-      <div className="w-11/12  mx-auto my-16 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
+      <div className="w-11/12 md:w-10/12  mx-auto my-16 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
         {filterCards.map((cards, idx) => (
           <Link to={`/card/${cards.id}`} key={idx}>
             <div
               style={{ backgroundColor: cards.card_bg }}
-              className="rounded-lg cursor-pointer flex flex-col justify-center items-center flex-grow-0  "
+              className="rounded-lg h-full  cursor-pointer flex-grow-0  "
             >
               <img className="w-full" src={cards.image} />
               <div className="p-4">
