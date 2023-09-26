@@ -58,7 +58,7 @@ const Donation = () => {
             <button
               onClick={seeAllBtn}
               className={`bg-green-500 hover:bg-green-600 px-4 text-lg font-semibold text-white rounded-md py-1 ${
-                seeAll === donates.length ? "hidden" : ""
+                seeAll === donates.length ? "hidden" : " "
               }`}
             >
               See All
