@@ -49,10 +49,10 @@ const Statistics = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h2 className="text-xl font-bold">Donation Chart</h2>
+    <div className="flex flex-col justify-center items-center mt-6">
+      <h2 className="text-3xl font-bold">Donation Chart</h2>
       <div>
-        <PieChart width={600} height={250}>
+        <PieChart width={375} height={250}>
           <Pie
             data={[
               { name: "Your Donation", value: calDonationPercentage() },
