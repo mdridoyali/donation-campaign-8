@@ -18,7 +18,7 @@ const Donation = () => {
 
   return (
     <div className="mb-10">
-      <div className="w-11/12 mt-10 mb-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 justify-between">
+      <div className="w-11/12 md:w-10/12 mt-10 mb-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-7 justify-between">
         {donates.slice(0, seeAll).map((donate, idx) => (
           <div
             key={idx}

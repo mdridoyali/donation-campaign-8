@@ -2,15 +2,15 @@ import { createContext, useEffect, useState } from "react";
 import DonateCards from "../DonateCards/DonateCards";
 export const Cards = createContext("card");
 
-
 const Banner = () => {
   const [searchCards, setSearchCards] = useState("");
   const [allCards , setAllCards] = useState([]);
-  const [filterCards, setFilterCards] = useState([])
-  // console.log(filterCards);
+  const [filterCards, setFilterCards] = useState([]);
+
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchCards(e.target.text.value);
+    e.target.text.value = "";
   };
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Banner = () => {
 
   useEffect(() => {
     if (searchCards && allCards.length > 0) {
-      const result = allCards.filter((cards) => cards.category === searchCards);
+      const result = allCards.filter((cards) => cards.category.toLowerCase() === searchCards.toLowerCase());
       setFilterCards(result);
     } else if (searchCards === "" && allCards.length > 0) {
       setFilterCards(allCards);
@@ -31,11 +31,12 @@ const Banner = () => {
   }, [searchCards, allCards]);
 
   return (
-    <div className="relative">
+ <div>
+     <div className="relative">
       <div className="absolute inset-0 bg-white opacity-90"></div>
       <img
         className="w-full h-[380px]"
-        src="/src/assets/successful-medical-team_329181-9252.avif"
+        src={`https://i.ibb.co/XsLMsjJ/Rectangle-4281.png`}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h2 className="text-5xl font-bold mb-8 text-center">
@@ -44,7 +45,6 @@ const Banner = () => {
         <div className="flex items-center">
           <form onSubmit={handleSearch}>
             <input
-              // onChange={setSearch}
               type="text"
               placeholder="Search Category"
               name="text"
@@ -53,15 +53,17 @@ const Banner = () => {
             <input
               type="submit"
               value="Search"
-              className="py-[9px] px-4 rounded-e-md bg-[#FF444A] text-white hover:bg-blue-600"
+              className="py-[9px] px-4 cursor-pointer rounded-e-md bg-[#FF444A] text-white hover:bg-blue-600"
             />
           </form>
         </div>
       </div>
-      <Cards.Provider value="card">
+     
+    </div>
+     <Cards.Provider value="card">
          <DonateCards filterCards={filterCards} ></DonateCards>
       </Cards.Provider>
-    </div>
+ </div>
   );
 };
 
